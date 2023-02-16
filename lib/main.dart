@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:srcds_tracker/src/utils/colors.dart';
+import 'package:srcds_tracker/src/utils/colors_utility.dart';
 import 'package:srcds_tracker/src/utils/styles.dart';
 
 void main() {

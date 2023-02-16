@@ -1,4 +1,4 @@
-import 'package:srcds_tracker/src/utils/colors.dart';
+import 'package:srcds_tracker/src/utils/colors_utility.dart';
 import 'package:flutter/material.dart';
 
 ThemeData getLightTheme(BuildContext context) {
