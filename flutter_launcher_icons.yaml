@@ -1,0 +1,12 @@
+# Flutter Launcher Icons
+# https://pub.dev/packages/flutter_launcher_icons
+# Command
+# flutter pub run flutter_launcher_icons:main -f <your config file name here>
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path_android: "assets/icons/ic_launcher_ruffle_foreground.png"
+  image_path_ios: "assets/icons/ic_launcher_ruffle_ios.png"
+  adaptive_icon_background: "assets/icons/ic_launcher_ruffle_background.png"
+  adaptive_icon_foreground: "assets/icons/ic_launcher_ruffle_foreground.png"
