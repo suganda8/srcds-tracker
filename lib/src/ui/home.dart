@@ -24,34 +24,35 @@ SOFTWARE.
 
 import 'package:flutter/material.dart';
 
-class Greeting {
-  static String getGreeting() {
-    final DateTime timeNow = DateTime.now();
-    final int hourNow = timeNow.hour;
-    if (hourNow <= 12) {
-      return 'Good Morning';
-    } else if ((hourNow > 12) && (hourNow <= 16)) {
-      return 'Good Afternoon';
-    } else if ((hourNow > 16) && (hourNow < 20)) {
-      return 'Good Evening';
-    } else {
-      return 'Good Night';
-    }
-  }
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key, this.scrollController}) : super(key: key);
 
-  static Color getColor() {
-    final DateTime timeNow = DateTime.now();
-    final int hourNow = timeNow.hour;
-    Color color;
-    if (hourNow <= 12) {
-      color = Colors.lightBlue.shade300; // Morning
-    } else if ((hourNow > 12) && (hourNow <= 16)) {
-      color = Colors.blue.shade300; // Afternoon
-    } else if ((hourNow > 16) && (hourNow < 20)) {
-      color = Colors.cyan.shade300; // Evening
-    } else {
-      color = Colors.indigo.shade300; // Night
-    }
-    return color.withOpacity(0.7);
+  final ScrollController? scrollController;
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SizedBox(
+        child: ListView.builder(
+          controller: widget.scrollController,
+          itemBuilder: (context, index) {
+            return const ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.deepPurple,
+                child: Text("A", style: TextStyle(color: Colors.white)),
+              ),
+              title: Text("Title"),
+              subtitle: Text("Description"),
+              trailing: Text("Trail"),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
